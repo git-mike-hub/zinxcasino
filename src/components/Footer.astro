@@ -1,0 +1,94 @@
+---
+const footerLinks = [
+  { href: "https://zinx.ro/ro/about", label: "Despre Noi" },
+  { href: "https://jocresponsabil.ro/primeste-ajutor/", label: "Joc Responsabil" },
+  { href: "https://zinx.ro/ro/rules", label: "Termeni și Condiții" },
+  { href: "/bonusuri", label: "Bonusuri" },
+  { href: "/jocuri", label: "Jocuri" },
+  { href: "https://zinx.ro/ro/privacy-policy", label: "Confidențialitate" },
+];
+---
+
+<footer class="mt-20 px-4 py-12" style="background: #080810; border-top: 1px solid #1a1a3e;" role="contentinfo">
+  <div class="max-w-6xl mx-auto">
+
+    <nav aria-label="Linkuri footer" class="flex flex-wrap justify-center gap-4 mb-10">
+      {footerLinks.map(link => (
+        <a href={link.href} class="text-sm text-gray-500 hover:text-white transition-colors">
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Payment Methods -->
+    <div class="flex flex-wrap justify-center items-center gap-3 mb-10">
+      <span class="text-gray-600 text-xs font-semibold uppercase tracking-wider w-full text-center mb-2">Metode de plată</span>
+      <span class="text-gray-300 text-sm px-4 py-2 rounded-lg" style="background: #111118; border: 1px solid #1a1a3e;">Visa</span>
+      <span class="text-gray-300 text-sm px-4 py-2 rounded-lg" style="background: #111118; border: 1px solid #1a1a3e;">Mastercard</span>
+      <span class="text-gray-300 text-sm px-4 py-2 rounded-lg" style="background: #111118; border: 1px solid #1a1a3e;">Skrill</span>
+      <span class="text-gray-300 text-sm px-4 py-2 rounded-lg" style="background: #111118; border: 1px solid #1a1a3e;">Neteller</span>
+      <span class="text-gray-300 text-sm px-4 py-2 rounded-lg" style="background: #111118; border: 1px solid #1a1a3e;">PaySafeCard</span>
+    </div>
+
+    <!-- Trust Symbols -->
+    <div class="flex flex-wrap justify-center items-center gap-8 mb-10 text-center">
+      <div class="flex flex-col items-center text-gray-600 text-xs">
+        <span class="text-2xl font-black text-gray-400">18+</span>
+        <span>Vârsta minimă</span>
+      </div>
+      <a
+        href="https://jocresponsabil.ro/primeste-ajutor/"
+        rel="noopener noreferrer sponsored"
+        target="_blank"
+        class="flex flex-col items-center text-gray-600 text-xs hover:text-white transition-colors"
+      >
+        <img
+          src="/images/logos/joc-responsabil.png"
+          alt="Joc Responsabil"
+          class="h-10 w-auto object-contain"
+          loading="lazy"
+        />
+        <span>Joc Responsabil</span>
+      </a>
+      <div class="flex flex-col items-center text-gray-600 text-xs">
+        <span class="text-2xl">⚖️</span>
+        <span>Licențiat</span>
+      </div>
+      <div class="flex flex-col items-center text-gray-600 text-xs">
+        <span class="text-2xl">🔒</span>
+        <span>SSL Securizat</span>
+      </div>
+      <a
+        href="https://onjn.gov.ro/"
+        rel="noopener noreferrer sponsored"
+        target="_blank"
+        class="flex flex-col items-center text-gray-600 text-xs hover:text-white transition-colors"
+      >
+        <img
+          src="/images/logos/onjn.png"
+          alt="ONJN"
+          class="h-12 w-auto object-contain"
+          loading="lazy"
+        />
+        <span>ONJN</span>
+      </a>
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="text-center text-gray-700 text-xs max-w-2xl mx-auto leading-relaxed mb-4">
+      Zinxcasino.ro este un site informativ asociat brandului Zinx. Jocurile de noroc implică riscuri.
+      Jucați responsabil. Acest site este destinat persoanelor cu vârsta de minimum 18 ani.
+      Dacă aveți o problemă cu jocurile de noroc, contactați
+      <a href="https://jocresponsabil.ro" rel="noopener noreferrer" target="_blank" class="underline hover:text-gray-400">jocresponsabil.ro</a>.
+    </p>
+
+    <p class="text-center text-gray-700 text-xs max-w-4xl mx-auto leading-relaxed mb-4">
+      Zinxcasino.ro aparține platformei Zinx.ro și reprezintă site-ul oficial de știri, informații și promoții asociat brandului. Zinx.ro este operat de Romanix Limited, companie înregistrată în Malta cu nr. C 99139, având sediul în Quad Central, Q3 Level 3, Zone 1, Triq L-Esportaturi, Central Business District, Birkirkara CBD 1040, Malta. Platforma funcționează în baza licenței ONJN nr. L1254520W001667.
+    </p>
+
+    <p class="text-center text-gray-800 text-xs">
+      © {new Date().getFullYear()} Zinxcasino.ro · Toate drepturile rezervate
+    </p>
+
+  </div>
+</footer>

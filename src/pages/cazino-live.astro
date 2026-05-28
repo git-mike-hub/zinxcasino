@@ -1,0 +1,266 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Banner from '../components/Banner.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+import Footer from '../components/Footer.astro';
+import { buildPageSchema } from '../lib/schemas/page';
+import { DEFAULT_OG_IMAGE } from '../lib/seo';
+
+const schema = buildPageSchema({
+  name: 'Cazino Live Zinx Casino',
+  description:
+    'Cazino live la Zinx Casino: ruletă, blackjack, baccarat și dealeri reali, disponibil pe desktop și mobil.',
+  path: '/cazino-live',
+  keywords: ['cazino live zinx', 'zinx casino live', 'ruletă live zinx'],
+});
+---
+
+<BaseLayout
+  title="Cazino Live Zinx Casino | Ruletă, Blackjack și Dealeri Reali"
+  description="Cazino Live Zinx Casino: ruletă live, blackjack, baccarat, game show-uri și mese cu dealeri reali pe desktop și mobil."
+  schema={schema}
+  ogImage={DEFAULT_OG_IMAGE}
+  ogImageAlt="Cazino Live Zinx Casino"
+>
+  <Header slot="header" />
+  <HeroCTA title="Casino Live - Zinx Casino" />
+  <Banner />
+
+  <main id="continut-principal" class="max-w-4xl mx-auto px-4 py-12 space-y-16">
+    <section aria-labelledby="cazino-live-zinx">
+      <h2 id="cazino-live-zinx" class="text-2xl font-bold mb-6" style="color: #00d4ff;">
+        Cazino Live la Zinx Casino: ruletă, blackjack și dealeri reali
+      </h2>
+
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>
+          Pentru mulți jucători, live casino este partea cea mai apropiată de experiența unui cazino real. Vezi dealerul.
+          Vezi masa. Auzi bilele la ruletă și reacțiile celorlalți jucători.
+        </p>
+
+        <p>
+          Pe <a href="https://zinxcasino.ro" class="underline" style="color: #a78bfa;">Zinx Casino</a> găsești sute de
+          jocuri de live casino, mese cu dealeri reali și transmisiuni HD disponibile direct din browser, fără descărcare.
+          Platforma combină jocuri live, sloturi și
+          <a href="/pariuri-sportive" class="underline ml-1" style="color: #a78bfa;">Pariuri Sportive</a> în același cont.
+        </p>
+
+        <p>
+          Zinxcasino.ro este site-ul oficial de știri și informații despre Zinx.ro. Aici prezentăm cele mai noi jocuri,
+          bonusuri și promoții disponibile pe platformă. Pentru joc pe bani reali și acces complet la contul de utilizator,
+          trebuie să accesezi site-ul oficial
+          <a href="https://zinx.ro/ro" class="underline ml-1" style="color: #a78bfa;">zinx.ro</a>.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="ce-gasesti-live-casino">
+      <h2 id="ce-gasesti-live-casino" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Ce găsești în secțiunea de live casino
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>
+          Zona de live casino de la Zinx include jocuri clasice de masă, mese internaționale și game show-uri live de la
+          furnizori foarte cunoscuți.
+        </p>
+        <p>Printre cele mai populare categorii sunt:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>ruletă live</li>
+          <li>blackjack live</li>
+          <li>baccarat live</li>
+          <li>poker live</li>
+          <li>Sic Bo</li>
+          <li>Andar Bahar</li>
+          <li>game show-uri live</li>
+        </ul>
+        <p>Unele mese sunt mai serioase și liniștite. Altele seamănă aproape cu un show TV. Depinde ce cauți.</p>
+        <p>
+          Prima dată când am intrat pe un game show live de tip Crazy Time pe alt casino online, sincer nu mă așteptam să
+          fie atât de haotic. Dealerul vorbea constant, chat-ul mergea nonstop și toată lumea reacționa la bonus rounds. E
+          o experiență complet diferită față de un slot obișnuit.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="provideri-live-casino">
+      <h2 id="provideri-live-casino" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Provideri live casino disponibili la Zinx Casino
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>
+          Conform review-urilor românești și informațiilor publice despre platformă, Zinx Casino colaborează cu furnizori
+          importanți din industria live casino:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Evolution</li>
+          <li>Pragmatic Play Live</li>
+          <li>Amusnet Live</li>
+          <li>NetEnt</li>
+          <li>Relax Gaming</li>
+        </ul>
+        <p>
+          Evolution este probabil cel mai important nume din listă pentru jocurile live. Majoritatea jucătorilor români
+          caută direct mesele Evolution atunci când intră într-un live casino.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="ruleta-live">
+      <h2 id="ruleta-live" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Ruletă live cu dealeri reali
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>Ruleta live rămâne unul dintre cele mai jucate jocuri din categoria live casino.</p>
+        <p>La Zinx găsești variante:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>ruletă europeană</li>
+          <li>ruletă franceză</li>
+          <li>ruletă americană</li>
+          <li>mese standard</li>
+          <li>mese VIP</li>
+        </ul>
+        <p>Poți paria pe:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>numere individuale</li>
+          <li>culori</li>
+          <li>pare sau impare</li>
+          <li>intervale de numere</li>
+          <li>secțiuni ale roții</li>
+        </ul>
+        <p>
+          Un lucru bun la ruleta live este ritmul. Nu simți aceeași grabă ca la sloturi. Ai câteva secunde să urmărești
+          masa și să alegi pariul.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="blackjack-live-online">
+      <h2 id="blackjack-live-online" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Blackjack live online
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>Blackjack-ul live este probabil cel mai social joc din categoria de cazino live.</p>
+        <p>
+          Vezi ce fac ceilalți jucători, poți urmări mesele în timp real și există mult mai multă interacțiune decât într-un
+          joc RNG normal.
+        </p>
+        <p>Regulile de bază sunt simple:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>scopul este să ajungi cât mai aproape de 21</li>
+          <li>dacă depășești 21, mâna este pierdută</li>
+          <li>poți cere carte suplimentară</li>
+          <li>poți face split în anumite situații</li>
+          <li>poți dubla miza pe anumite mâini</li>
+        </ul>
+        <p>
+          Mulți jucători încep cu blackjack live pentru că este mai ușor de urmărit decât alte jocuri de masă. Și sincer,
+          dealerii live fac experiența mult mai relaxată decât pare la început.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="baccarat-si-jocuri-masa">
+      <h2 id="baccarat-si-jocuri-masa" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Baccarat live și alte jocuri de masă
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>
+          Pe lângă ruletă și blackjack, secțiunea de
+          <a href="/cazino-live" class="underline ml-1" style="color: #a78bfa;">Cazino Live</a> include și baccarat live,
+          poker live și alte jocuri de masă.
+        </p>
+        <p>
+          Baccarat-ul este foarte popular printre jucătorii care preferă reguli simple și runde rapide. Practic, alegi dacă
+          pariezi pe Player, Banker sau Egalitate.
+        </p>
+        <p>Zinx include și jocuri precum:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Sic Bo</li>
+          <li>Andar Bahar</li>
+          <li>poker live</li>
+          <li>mese interactive</li>
+          <li>live game shows</li>
+        </ul>
+        <p>Dacă te plictisești de sloturi și păcănele online, jocurile live schimbă complet ritmul.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="live-casino-mobil">
+      <h2 id="live-casino-mobil" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Live casino pe mobil
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>Majoritatea jucătorilor intră acum direct de pe telefon.</p>
+        <p>
+          Live casino merge bine pe Android și iPhone, direct din browser. Nu trebuie să descarci aplicație ca să intri la
+          mese live.
+        </p>
+        <p>Ai nevoie doar de:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>internet stabil</li>
+          <li>cont verificat</li>
+          <li>sold activ</li>
+        </ul>
+        <p>Și cam asta este. Intri pe masă și începi jocul.</p>
+        <p>
+          Uneori chiar e mai comod pe mobil decât pe desktop. Mai ales la ruletă live sau blackjack live unde interfața
+          este foarte simplă.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="bonusuri-live-casino">
+      <h2 id="bonusuri-live-casino" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Bonusuri pentru live casino
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>
+          Zinx Casino are și promoții dedicate pentru live casino. Una dintre cele mai cunoscute este cashback-ul săptămânal
+          pentru live casino de 10% până la 1.000 RON.
+        </p>
+        <p>
+          Dacă vrei să vezi toate promoțiile active, verifică pagina de
+          <a href="/bonusuri" class="underline ml-1" style="color: #a78bfa;">Bonusuri</a>.
+        </p>
+        <p>În funcție de campanie, poți găsi:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>cashback live casino</li>
+          <li>bonusuri de reîncărcare</li>
+          <li>promoții speciale</li>
+          <li>recompense VIP</li>
+          <li>turnee</li>
+        </ul>
+        <p>
+          Ca la orice promoție, verifică termenii înainte să activezi bonusul. Contează jocurile eligibile, perioada
+          promoției și eventualele condiții de rulaj.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="zinx-bun-live-casino">
+      <h2 id="zinx-bun-live-casino" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Este Zinx Casino bun pentru live casino?
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>Pentru jucătorii care caută live casino în România, Zinx Casino are o ofertă solidă:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>sute de mese live</li>
+          <li>dealeri reali</li>
+          <li>ruletă live</li>
+          <li>blackjack live</li>
+          <li>game show-uri</li>
+          <li>cashback pentru live casino</li>
+          <li>platformă optimizată pentru mobil</li>
+        </ul>
+        <p>Platforma funcționează legal în România și operează în baza licenței ONJN L1254520W001667.</p>
+        <p>
+          Dacă vrei să vezi toate mesele live și promoțiile active, poți intra direct pe
+          <a href="https://zinx.ro/ro" class="underline ml-1" style="color: #a78bfa;">zinx.ro</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,17 +1,251 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Banner from '../components/Banner.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+import GameCategories from '../components/GameCategories.astro';
+import Footer from '../components/Footer.astro';
+import { buildHomeSchema } from '../lib/schemas/home';
+import { DEFAULT_OG_IMAGE } from '../lib/seo';
 
+const schema = buildHomeSchema();
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Zinx Casino | România – Bonusuri, Sloturi, Live Casino și Pariuri Sportive"
+  description="Zinx Casino România: informații oficiale despre bonusuri până la 5.000 RON, sloturi, cazino live și pariuri sportive. Licențiat ONJN pentru jucătorii din România."
+  schema={schema}
+  ogImage={DEFAULT_OG_IMAGE}
+  ogImageAlt="Zinx Casino – bonusuri și jocuri online în România"
+>
+<Header slot="header" />
+  <HeroCTA title="Zinx Casino" />
+  <Banner />
+  
+
+
+  <GameCategories />
+
+  <main id="continut-principal" class="max-w-4xl mx-auto px-4 py-12 space-y-16">
+
+    <section aria-labelledby="despre-zinx">
+      <h2 id="despre-zinx" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Zinx Casino România – cazino, pariuri sportive și mult mai mult
+      </h2>
+      <div class="mb-6 overflow-hidden rounded-xl border border-[#1a1a3e]" style="aspect-ratio: 16 / 9;">
+        <iframe
+          id="zinx-intro-video"
+          class="h-full w-full"
+          src="https://www.youtube.com/embed/7NWMrDfSYcE?rel=0&modestbranding=1&enablejsapi=1"
+          title="Prezentare Zinx Casino"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="text-gray-300 leading-relaxed">
+        Zinx nu este doar un alt cazino online. Este o platformă construită cu gândul la jucătorii din România care vor mai mult decât rotiri și bilete — vor o experiență completă, cu adrenalină, recompense reale și distracție la fiecare sesiune. De la sloturi cu jackpot-uri progresive până la mese live cu dealeri care vorbesc română, și de la pariuri pe Liga 1 până la turnee săptămânale cu premii, Zinx adună totul într-un singur loc.
+      </p>
+      <p class="text-gray-300 leading-relaxed mt-4">
+        Platforma este licențiată ONJN — Licența Clasa 1 nr. L1254520W001667 — ceea ce înseamnă că joci legal, în siguranță și într-un mediu reglementat. Nu trebuie să cauți în altă parte: cazino, sport, bonusuri, VIP — totul este la Zinx.ro.
+      </p>
+    </section>
+
+    <section aria-labelledby="jocuri-cazino">
+      <h2 id="jocuri-cazino" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Sloturi, jackpot-uri și jocuri de masă
+      </h2>
+      <p class="text-gray-300 leading-relaxed">
+        Cu peste 1.900 de jocuri disponibile, catalogul Zinx acoperă tot ce îți poți dori. Îți plac păcănelele clasice cu fructe? Le găsești. Preferi video sloturile moderne cu funcții speciale, multiplicatori și opțiunea Cumpără Bonus? Sunt acolo. Vânezi jackpot-uri progresive care cresc cu fiecare rotire? Zinx are și din astea.
+      </p>
+      <p class="text-gray-300 leading-relaxed mt-4">
+        Jocurile vin de la furnizori de top precum Pragmatic Play, NetEnt, Play'n GO, Amusnet, Big Time Gaming, Hacksaw Gaming și mulți alții. Săptămânal, un slot este ales pentru un turneu cu premii în monede — dacă ești genul competitiv, ai mereu un motiv să revii.
+      </p>
+    </section>
+
+    <section aria-labelledby="cazino-live">
+      <h2 id="cazino-live" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Cazino live: atmosfera unui cazino real, de acasă
+      </h2>
+      <p class="text-gray-300 leading-relaxed">
+        Mesele live Zinx aduc experiența unui cazino fizic direct pe ecranul tău. Dealeri reali, transmisiuni de calitate din studiourile Evolution și Pragmatic Live, și mese în limba română — pentru că uneori contează să înțelegi ce se întâmplă la masă.
+      </p>
+      <p class="text-gray-300 leading-relaxed mt-4">
+        Poți juca ruletă, blackjack, baccarat și zaruri, cu mize care pornesc de la 0,50 RON și ajung la sume mari pentru cei care preferă mesele VIP. Există și un turneu de cazino live săptămânal cu miză minimă de 1,5 RON — accesibil pentru oricine vrea să concureze.
+      </p>
+    </section>
+
+    <section aria-labelledby="pariuri-sportive">
+      <h2 id="pariuri-sportive" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Pariuri sportive: Liga 1, cote mărite și live betting
+      </h2>
+      <p class="text-gray-300 leading-relaxed">
+        Dacă fotbalul, tenisul sau baschetul îți dau adrenalina pe care o cauți, secțiunea de pariuri Zinx este construită pentru tine. Peste 30 de sporturi disponibile, piețe clasice și speciale, statistici în timp real și pariuri live care îți permit să intri în acțiune chiar în timpul meciului.
+      </p>
+      <p class="text-gray-300 leading-relaxed mt-4">
+        Meciurile din Liga 1 au cote mărite, iar pentru cei care preferă fotbalul virtual, există ligi simulate 24/7. Bet Mentor îi ajută pe pariorii mai noi să înțeleagă opțiunile disponibile, iar opțiunea de verificare bilet este disponibilă direct pe site.
+      </p>
+    </section>
+
+    <section aria-labelledby="bonusuri-promotii">
+      <h2 id="bonusuri-promotii" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Bonusuri și promoții Zinx
+      </h2>
+      <p class="text-gray-300 leading-relaxed mb-6">
+        Zinx nu se rezumă la un bonus de bun venit și atât. Există promoții active în fiecare săptămână, atât pentru cazino cât și pentru pariuri sportive.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead>
+            <tr style="background: #111118; border-bottom: 1px solid #1a1a3e;">
+              <th class="py-3 px-4 text-white font-semibold">Tipul bonusului</th>
+              <th class="py-3 px-4 text-white font-semibold">Valoare</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #1a1a3e;">
+              <td class="py-3 px-4 text-gray-400">Bun venit cazino</td>
+              <td class="py-3 px-4 text-white">100% până la 5.000 RON + 500 rotiri gratuite</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1a1a3e;">
+              <td class="py-3 px-4 text-gray-400">Reîncărcare săptămânală cazino</td>
+              <td class="py-3 px-4 text-white">50 rotiri gratuite</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1a1a3e;">
+              <td class="py-3 px-4 text-gray-400">Reîncărcare weekend cazino</td>
+              <td class="py-3 px-4 text-white">600 RON + 60 rotiri gratuite</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1a1a3e;">
+              <td class="py-3 px-4 text-gray-400">Cashback cazino</td>
+              <td class="py-3 px-4 text-white">10% până la 1.000 RON</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1a1a3e;">
+              <td class="py-3 px-4 text-gray-400">Bun venit sport</td>
+              <td class="py-3 px-4 text-white">100% până la 200 RON</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 text-gray-400">Cashback sport</td>
+              <td class="py-3 px-4 text-white">10% până la 2.500 RON</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-400 text-sm mt-4">
+        Monedele câștigate din provocări zilnice pot fi preschimbate în magazinul de bonusuri contra rotiri gratuite, bani bonus sau pariuri gratuite.
+        <a href="/bonusuri" class="underline font-semibold ml-1" style="color: #a78bfa;">Vezi toate bonusurile →</a>
+      </p>
+    </section>
+
+    <section aria-labelledby="vip-loialitate">
+      <h2 id="vip-loialitate" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Program VIP și loialitate
+      </h2>
+      <p class="text-gray-300 leading-relaxed">
+        Jucătorii fideli Zinx sunt răsplătiți pe măsură. Programul VIP aduce cashback progresiv, oferte personalizate, limite de retragere mărite și un asistent privat dedicat. Nu este un program generic — este construit pentru cei care joacă serios și merită mai mult.
+      </p>
+    </section>
+
+    <section aria-labelledby="plati-siguranta">
+      <h2 id="plati-siguranta" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Plăți rapide și siguranță garantată
+      </h2>
+      <p class="text-gray-300 leading-relaxed">
+        Depunerea minimă este de 25 RON, iar retragerea minimă de 50 RON. Metodele disponibile includ Visa, Mastercard, Skrill, Neteller, Paysafecard, Apple Pay și OKTO Cash. Toate conexiunile sunt securizate SSL, iar jocurile funcționează pe bază de RNG certificat — fiecare rundă este independentă și aleatorie.
+      </p>
+    </section>
+
+    <section aria-labelledby="faq-zinx">
+      <h2 id="faq-zinx" class="text-2xl font-bold mb-6" style="color: #00d4ff;">
+        Întrebări frecvente despre Zinx Casino
+      </h2>
+      <div class="space-y-6" itemscope itemtype="https://schema.org/FAQPage">
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name" class="font-semibold text-white text-lg mb-2">
+            Este Zinx Casino legal în România?
+          </h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text" class="text-gray-400">
+              Da. Zinx Casino este licențiat de ONJN prin Licența Clasa 1 nr. L1254520W001667. Platforma funcționează într-un cadru reglementat, cu conexiuni SSL și jocuri cu RNG certificat.
+            </p>
+          </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name" class="font-semibold text-white text-lg mb-2">
+            Ce bonus primesc la înregistrare?
+          </h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text" class="text-gray-400">
+              La prima depunere primești 100% bonus până la 5.000 RON + 500 rotiri gratuite pentru cazino, sau 100% până la 200 RON pentru pariuri sportive. Rulajul bonusului de cazino este de 35x (depunere + bonus).
+            </p>
+          </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name" class="font-semibold text-white text-lg mb-2">
+            Cum retrag banii de la Zinx?
+          </h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text" class="text-gray-400">
+              Din contul tău, accesezi secțiunea de retrageri, alegi metoda preferată și introduci suma. Retragerea minimă este 50 RON. Contul trebuie verificat înainte de prima retragere.
+            </p>
+          </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name" class="font-semibold text-white text-lg mb-2">
+            Zinx funcționează pe mobil?
+          </h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text" class="text-gray-400">
+              Da, Zinx funcționează direct din browser pe orice dispozitiv — telefon, tabletă sau PC — fără să fie necesară descărcarea unei aplicații. Există și aplicații native pentru iOS și Android.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+
+  <script is:inline>
+    const youtubeScriptId = 'youtube-iframe-api';
+    const iframeId = 'zinx-intro-video';
+
+    const ensureMutedPlayback = () => {
+      const iframe = document.getElementById(iframeId);
+      if (!iframe || !window.YT || !window.YT.Player) return;
+
+      const player = new window.YT.Player(iframeId, {
+        events: {
+          onReady: (event) => event.target.mute(),
+          onStateChange: (event) => {
+            if (event.data === window.YT.PlayerState.PLAYING && !event.target.isMuted()) {
+              event.target.mute();
+            }
+          },
+        },
+      });
+
+      return player;
+    };
+
+    window.onYouTubeIframeAPIReady = ensureMutedPlayback;
+
+    if (!document.getElementById(youtubeScriptId)) {
+      const script = document.createElement('script');
+      script.id = youtubeScriptId;
+      script.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(script);
+    } else if (window.YT && window.YT.Player) {
+      ensureMutedPlayback();
+    }
+  </script>
+
+</BaseLayout>

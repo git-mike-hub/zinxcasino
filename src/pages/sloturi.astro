@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Banner from '../components/Banner.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+import Footer from '../components/Footer.astro';
+import { buildPageSchema } from '../lib/schemas/page';
+import { DEFAULT_OG_IMAGE } from '../lib/seo';
+
+const schema = buildPageSchema({
+  name: 'Sloturi Online și Păcănele la Zinx Casino',
+  description:
+    'Sloturi și păcănele online la Zinx Casino: jocuri populare, jackpoturi, RTP, volatilitate, bonusuri și acces pe mobil.',
+  path: '/sloturi',
+  keywords: ['sloturi zinx casino', 'păcănele online', 'zinx casino sloturi'],
+});
+---
+
+<BaseLayout
+  title="Sloturi Online la Zinx Casino | Păcănele și Jackpoturi"
+  description="Sloturi și păcănele online la Zinx Casino: Sweet Bonanza, Gates of Olympus, jackpoturi, RTP, bonusuri și joc pe mobil."
+  schema={schema}
+  ogImage={DEFAULT_OG_IMAGE}
+  ogImageAlt="Sloturi online Zinx Casino"
+>
+  <Header slot="header" />
+  <HeroCTA title="Păcănele - Zinx Casino" />
+  <Banner />
+
+  <main id="continut-principal" class="max-w-4xl mx-auto px-4 py-12 space-y-16">
+    <section aria-labelledby="sloturi-online">
+      <h2 id="sloturi-online" class="text-3xl md:text-4xl font-bold mb-6" style="color: #00d4ff;">
+        Sloturi Online și Păcănele la Zinx Casino
+      </h2>
+
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>
+          Sloturile sunt primul lucru pe care îl caută majoritatea jucătorilor când intră pe un casino online. Sau
+          păcănelele, jocurile ca la aparate, video sloturile. În România, lumea le spune în toate felurile.
+        </p>
+
+        <p>
+          Pe <a href="https://zinxcasino.ro" class="underline" style="color: #a78bfa;">Zinx Casino</a> găsești o
+          selecție mare de sloturi online, jocuri demo și jackpoturi, plus live casino și pariuri sportive în același
+          cont. Platforma este licențiată ONJN și operată de Romanix Limited, companie cunoscută și pentru brandul
+          TopBet.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="sectiune-pacanele">
+      <h2 id="sectiune-pacanele" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Ce găsești în secțiunea de păcănele
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>
+          Oferta de jocuri este unul dintre punctele forte ale platformei. Mai multe site-uri de review din România
+          menționează între 1.900 și peste 2.300 de jocuri disponibile.
+        </p>
+        <p>Aici găsești:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>sloturi online clasice</li>
+          <li>video sloturi moderne</li>
+          <li>jocuri Megaways</li>
+          <li>jackpoturi progresive</li>
+          <li>live casino</li>
+          <li>jocuri demo</li>
+          <li>jocuri de masă</li>
+        </ul>
+        <p>
+          Un detaliu util este faptul că multe sloturi pot fi testate gratuit înainte să joci pe bani reali. Dacă vrei
+          să vezi cum funcționează un joc sau cât de volatil este, modul demo chiar ajută.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="provideri-jocuri">
+      <h2 id="provideri-jocuri" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Provideri și jocuri populare
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>Zinx Casino colaborează cu furnizori foarte cunoscuți pe piața din România:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Pragmatic Play</li>
+          <li>Amusnet</li>
+          <li>Relax Gaming</li>
+          <li>Playson</li>
+          <li>NetEnt</li>
+          <li>Evolution</li>
+        </ul>
+        <p>Printre cele mai jucate păcănele online se numără:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Sweet Bonanza</li>
+          <li>Gates of Olympus</li>
+          <li>Shining Crown</li>
+          <li>Hot Spins</li>
+        </ul>
+        <p>
+          Sweet Bonanza apare foarte des și în promoțiile platformei. Inclusiv o parte dintre rotirile gratuite din
+          bonusul de bun venit sunt oferite pe acest joc.
+        </p>
+        <p>
+          Dacă ai mai jucat prin săli sau pe alte platforme online, probabil recunoști senzația. Intrii pentru câteva
+          rotiri și ajungi să stai o oră urmărind bonusul.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="cum-functioneaza-sloturile">
+      <h2 id="cum-functioneaza-sloturile" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Cum funcționează sloturile online
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>Toate jocurile folosesc RNG, adică generator de numere aleatorii.</p>
+        <p>Pe scurt:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>fiecare rotire este independentă</li>
+          <li>rezultatele sunt random</li>
+          <li>rundele anterioare nu influențează următoarea rotire</li>
+        </ul>
+        <p>
+          Mulți jucători încă au impresia că un slot „trebuie să dea”. În realitate, jocurile licențiate ONJN nu
+          funcționează pe tipare.
+        </p>
+        <p>
+          Țin minte că un prieten era convins că după 40-50 de spinuri fără bonus urmează sigur ceva mare. După încă
+          20 de rotiri tot nimic. Exact asta înseamnă volatilitatea la sloturi.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="rtp-volatilitate">
+      <h2 id="rtp-volatilitate" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        RTP și volatilitate
+      </h2>
+      <h3 class="text-xl font-semibold mb-3 text-white">Ce este RTP-ul</h3>
+      <div class="space-y-5 text-gray-300 leading-relaxed mb-8">
+        <p>RTP-ul arată cât returnează teoretic jocul către jucători pe termen lung.</p>
+        <p>
+          De exemplu, un RTP de 96% înseamnă că jocul returnează statistic 96 RON la fiecare 100 RON pariați, calculat
+          pe milioane de rotiri.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-3 text-white">Ce înseamnă volatilitatea</h3>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>Volatilitatea îți arată stilul jocului.</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>volatilitate mică = câștiguri mai dese, dar mai mici</li>
+          <li>volatilitate mare = câștiguri mai rare, dar potențial mai mari</li>
+        </ul>
+        <p>
+          Majoritatea sloturilor populare acum sunt destul de volatile. Gates of Olympus este probabil cel mai bun
+          exemplu.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="bonusuri-sloturi">
+      <h2 id="bonusuri-sloturi" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Bonusuri pentru sloturi
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>
+          Dacă vrei să vezi toate promoțiile active, poți verifica și pagina de
+          <a href="/bonusuri" class="underline ml-1" style="color: #a78bfa;">Bonusuri</a>.
+        </p>
+        <p>Bonusul principal de la Zinx Casino include:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>până la 5.000 RON bonus</li>
+          <li>până la 500 rotiri gratuite</li>
+          <li>bonus distribuit pe primele 3 depuneri</li>
+          <li>free spins pe Sweet Bonanza</li>
+        </ul>
+        <p>
+          Depunerea minimă pentru activarea bonusului este de 25 RON, iar condițiile de rulaj sunt afișate transparent
+          în pagina promoțiilor.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="sloturi-mobil">
+      <h2 id="sloturi-mobil" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Sloturi online pe mobil
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>Majoritatea jucătorilor intră acum direct de pe telefon.</p>
+        <p>
+          Sloturile merg bine atât pe Android, cât și pe iPhone, direct din browser. Nu trebuie să descarci nimic ca să
+          începi să joci.
+        </p>
+        <p>
+          Poți să intri rapid pe un joc oriunde ai internet. În pauză. În autobuz. Sau seara înainte de somn, exact cum
+          fac mulți jucători deja.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="mai-mult-decat-pacanele">
+      <h2 id="mai-mult-decat-pacanele" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Mai mult decât păcănele
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>Dacă te plictisești de sloturi, platforma include și alte categorii populare.</p>
+        <p>
+          Poți verifica secțiunea de
+          <a href="/cazino-live" class="underline ml-1" style="color: #a78bfa;">Cazino Live</a>
+          pentru:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>ruletă live</li>
+          <li>blackjack live</li>
+          <li>baccarat</li>
+          <li>mese cu dealeri reali</li>
+        </ul>
+        <p>
+          Mai multe review-uri menționează că blackjack live este una dintre cele mai dezvoltate categorii de pe
+          platformă.
+        </p>
+        <p>
+          Există și secțițiunea de
+          <a href="/pariuri-sportive" class="underline ml-1" style="color: #a78bfa;">Pariuri Sportive</a>, unde găsești:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>pariuri pre-match</li>
+          <li>pariuri live</li>
+          <li>sporturi virtuale</li>
+        </ul>
+        <p>
+          Faptul că ai casino și betting în același cont este unul dintre motivele pentru care platforma a crescut
+          rapid în România.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="merita-zinx-sloturi">
+      <h2 id="merita-zinx-sloturi" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
+        Merită Zinx Casino pentru sloturi?
+      </h2>
+      <div class="space-y-5 text-gray-300 leading-relaxed">
+        <p>Pentru un operator relativ nou, Zinx Casino are deja o ofertă solidă:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>mii de jocuri disponibile</li>
+          <li>sloturi demo</li>
+          <li>jackpoturi</li>
+          <li>live casino</li>
+          <li>bonusuri mari pentru jucători noi</li>
+          <li>pariuri sportive integrate</li>
+        </ul>
+        <p>
+          Platforma funcționează legal în România în baza licenței ONJN și poate fi accesată atât de pe desktop, cât și
+          de pe mobil.
+        </p>
+        <p>
+          Acesta este site-ul oficial de știri și informații despre Zinx Casino, creat pentru a prezenta cele mai noi
+          bonusuri, sloturi online și promoții disponibile pe platformă. Pentru joc pe bani reali și acces complet la
+          contul de utilizator, vizitează site-ul oficial
+          <a href="https://zinx.ro/ro/" class="underline ml-1" style="color: #a78bfa;">zinx.ro</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

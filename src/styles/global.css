@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+body.has-sticky-banner {
+  padding-bottom: 110px;
+}
+
+.sticky-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(1024px, 100vw);
+  z-index: 60;
+}
+
+.sticky-banner__link {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+}
+
+.sticky-banner__image {
+  width: 100%;
+  height: auto;
+}
+
+.sticky-banner__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  body.has-sticky-banner {
+    padding-bottom: 96px;
+  }
+
+  .sticky-banner {
+    bottom: 0;
+    width: 100vw;
+  }
+
+  .sticky-banner__close {
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+  }
+}
