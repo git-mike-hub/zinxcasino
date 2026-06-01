@@ -1,4 +1,6 @@
-export const SITE_URL = 'https://zinxcasino.ro';
+import { SITE_URL } from '../../site-url.mjs';
+
+export { SITE_URL };
 export const SITE_NAME = 'Zinx Casino România';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/zinx-casino-banner-desktop.webp`;
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;

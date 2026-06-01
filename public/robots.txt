@@ -1,0 +1,20 @@
+# Zinx Casino - https://www.zinxcasino.ro
+# Allow all crawlers; no paths disallowed.
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.zinxcasino.ro/sitemap-index.xml

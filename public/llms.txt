@@ -1,0 +1,39 @@
+# Zinx Casino România
+
+> Zinxcasino.ro este site-ul informativ oficial pentru jucătorii din România despre brandul Zinx: cazino online, cazino live, sloturi și pariuri sportive, cu bonusuri, licență ONJN și ghiduri în limba română.
+
+Zinxcasino.ro oferă informații, știri și promoții asociate platformei Zinx.ro. Nu este platforma de joc în sine — jucătorii se înregistrează și joacă pe Zinx.ro. Conținutul acestui site explică oferta, bonusurile, categoriile de jocuri și condițiile legale pentru publicul din România.
+
+**Informații cheie despre Zinx Casino**
+
+- **Licență:** ONJN, Licența Clasa 1 nr. L1254520W001667 — operare legală și reglementată în România.
+- **Operator:** Zinx.ro este operat de Romanix Limited (Malta, nr. C 99139); zinxcasino.ro este site-ul informativ al brandului.
+- **Ofertă:** Peste 1.800–1.900 de jocuri (sloturi, jackpoturi, jocuri de masă), cazino live (Evolution, Pragmatic Live, mese în română), pariuri sportive (peste 30 de sporturi, live betting).
+- **Furnizori:** Pragmatic Play, NetEnt, Play'n GO, Amusnet, Big Time Gaming, Hacksaw Gaming și alții.
+- **Bonus bun venit cazino:** 100% până la 5.000 RON + 500 rotiri gratuite; rulaj bonus cazino 35× (depunere + bonus).
+- **Bonus bun venit sport:** 100% până la 200 RON.
+- **Alte promoții:** reîncărcări săptămânale/weekend, cashback cazino (10% până la 1.000 RON) și sport (10% până la 2.500 RON), turnee sloturi și live casino, program VIP.
+- **Plăți:** depunere minimă 25 RON, retragere minimă 50 RON; Visa, Mastercard, Skrill, Neteller, Paysafecard, Apple Pay, OKTO Cash; conexiuni SSL, RNG certificat.
+- **Mobil:** funcționează în browser pe telefon, tabletă și PC; aplicații native iOS și Android disponibile.
+- **Limbă:** conținut principal în română (`ro-RO`).
+
+**Joc responsabil**
+
+Jocurile de noroc implică risc financiar și pot crea dependență. Acest site este destinat exclusiv persoanelor de minimum **18 ani**. Jucați doar cu sume pe care vi le puteți permite să pierdeți. Dacă simțiți că jocul devine o problemă, solicitați ajutor la [Joc Responsabil](https://jocresponsabil.ro/primeste-ajutor/). Autoritatea de reglementare din România: [ONJN](https://onjn.gov.ro/).
+
+## Pagini
+
+- [Acasă](https://www.zinxcasino.ro/): Prezentare generală Zinx Casino România — bonusuri, sloturi, live casino, pariuri sportive, FAQ și licență ONJN.
+- [Bonusuri](https://www.zinxcasino.ro/bonusuri/): Promoții cazino și sport — bun venit, cashback, rotiri gratuite, reîncărcări și condiții de rulaj.
+- [Jocuri](https://www.zinxcasino.ro/jocuri/): Catalog jocuri — sloturi, live casino, ruletă, blackjack, jackpoturi și pariuri sportive într-un singur cont.
+- [Sloturi](https://www.zinxcasino.ro/sloturi/): Păcănele și sloturi online — titluri populare, jackpoturi, RTP și joc pe mobil.
+- [Cazino Live](https://www.zinxcasino.ro/cazino-live/): Ruletă, blackjack, baccarat și game show-uri cu dealeri reali, desktop și mobil.
+- [Pariuri Sportive](https://www.zinxcasino.ro/pariuri-sportive/): Peste 30 de sporturi, live betting, bonus sport și piețe pentru fotbal (inclusiv Liga 1).
+
+## Optional
+
+- [Sitemap](https://www.zinxcasino.ro/sitemap-index.xml): Index XML cu toate URL-urile publice ale site-ului.
+- [Platforma de joc Zinx.ro](https://zinx.ro/ro): Înregistrare, depuneri, retrageri și joc efectiv (site separat de zinxcasino.ro).
+- [Termeni și condiții Zinx](https://zinx.ro/ro/rules): Regulile oficiale ale platformei de joc.
+- [Politica de confidențialitate](https://zinx.ro/ro/privacy-policy): Prelucrarea datelor pe platforma Zinx.ro.
+- [Despre Zinx](https://zinx.ro/ro/about): Informații despre operator și brand.

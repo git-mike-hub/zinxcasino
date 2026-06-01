@@ -6,13 +6,17 @@ import { DEFAULT_OG_IMAGE, SITE_NAME, absoluteUrl } from '../lib/seo';
 const {
   title,
   description,
-  canonicalURL = Astro.url,
+  canonicalURL,
   ogImage = DEFAULT_OG_IMAGE,
   ogImageAlt = 'Zinx Casino România',
   schema = null,
 } = Astro.props;
 
-const canonical = canonicalURL instanceof URL ? canonicalURL.href : absoluteUrl(canonicalURL);
+const canonicalPath =
+  canonicalURL instanceof URL
+    ? canonicalURL.pathname
+    : (canonicalURL ?? Astro.url.pathname);
+const canonical = absoluteUrl(canonicalPath);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : absoluteUrl(ogImage);
 ---
 
