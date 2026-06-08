@@ -32,17 +32,32 @@ const schema = buildHomeSchema();
       <h2 id="despre-zinx" class="text-2xl font-bold mb-4" style="color: #00d4ff;">
         Zinx Casino România – cazino, pariuri sportive și mult mai mult
       </h2>
-      <div class="mb-6 overflow-hidden rounded-xl border border-[#1a1a3e]" style="aspect-ratio: 16 / 9;">
-        <iframe
-          id="zinx-intro-video"
-          class="h-full w-full"
-          src="https://www.youtube.com/embed/7NWMrDfSYcE?rel=0&modestbranding=1&enablejsapi=1"
-          title="Prezentare Zinx Casino"
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+      <div id="zinx-intro-video" class="mb-6 overflow-hidden rounded-xl border border-[#1a1a3e]" style="aspect-ratio: 16 / 9;">
+        <button
+          type="button"
+          class="group relative block h-full w-full cursor-pointer border-0 bg-black p-0"
+          aria-label="Redă videoclipul Prezentare Zinx Casino"
+        >
+          <img
+            src="/images/zinxintro_thumbnail.png"
+            alt="Prezentare Zinx Casino – apasă pentru redare"
+            class="h-full w-full object-cover"
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+          <span
+            class="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/20 transition group-hover:bg-black/30"
+            aria-hidden="true"
+          >
+            <span class="flex h-16 w-16 items-center justify-center rounded-full bg-red-600/90 shadow-lg">
+              <svg class="ml-1 h-8 w-8 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+            </span>
+          </span>
+        </button>
       </div>
       <p class="text-gray-300 leading-relaxed">
         Zinx nu este doar un alt cazino online. Este o platformă construită cu gândul la jucătorii din România care vor mai mult decât rotiri și bilete — vor o experiență completă, cu adrenalină, recompense reale și distracție la fiecare sesiune. De la sloturi cu jackpot-uri progresive până la mese live cu dealeri care vorbesc română, și de la pariuri pe Liga 1 până la turnee săptămânale cu premii, Zinx adună totul într-un singur loc.
@@ -215,37 +230,24 @@ const schema = buildHomeSchema();
   <Footer />
 
   <script is:inline>
-    const youtubeScriptId = 'youtube-iframe-api';
-    const iframeId = 'zinx-intro-video';
+    document.getElementById('zinx-intro-video')?.addEventListener(
+      'click',
+      () => {
+        const container = document.getElementById('zinx-intro-video');
+        if (!container || container.querySelector('iframe')) return;
 
-    const ensureMutedPlayback = () => {
-      const iframe = document.getElementById(iframeId);
-      if (!iframe || !window.YT || !window.YT.Player) return;
+        const iframe = document.createElement('iframe');
+        iframe.className = 'h-full w-full';
+        iframe.src = 'https://www.youtube.com/embed/7NWMrDfSYcE?rel=0&modestbranding=1&autoplay=1';
+        iframe.title = 'Prezentare Zinx Casino';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
 
-      const player = new window.YT.Player(iframeId, {
-        events: {
-          onReady: (event) => event.target.mute(),
-          onStateChange: (event) => {
-            if (event.data === window.YT.PlayerState.PLAYING && !event.target.isMuted()) {
-              event.target.mute();
-            }
-          },
-        },
-      });
-
-      return player;
-    };
-
-    window.onYouTubeIframeAPIReady = ensureMutedPlayback;
-
-    if (!document.getElementById(youtubeScriptId)) {
-      const script = document.createElement('script');
-      script.id = youtubeScriptId;
-      script.src = 'https://www.youtube.com/iframe_api';
-      document.body.appendChild(script);
-    } else if (window.YT && window.YT.Player) {
-      ensureMutedPlayback();
-    }
+        container.replaceChildren(iframe);
+      },
+      { once: true },
+    );
   </script>
 
 </BaseLayout>

@@ -3,7 +3,8 @@ import { SITE_URL } from '../../site-url.mjs';
 export { SITE_URL };
 export const SITE_NAME = 'Zinx Casino România';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/zinx-casino-banner-desktop.webp`;
-export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+export const ORGANIZATION_URL = 'https://zinx.ro';
+export const ORGANIZATION_ID = `${ORGANIZATION_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
 export function normalizePath(path: string): string {
@@ -21,8 +22,13 @@ export function buildOrganization() {
     '@id': ORGANIZATION_ID,
     name: 'Zinx Casino',
     alternateName: 'Zinx Casino România',
-    url: SITE_URL,
+    url: ORGANIZATION_URL,
     logo: absoluteUrl('/images/logos/zinx-logo.svg'),
+    sameAs: [
+      'https://www.wikidata.org/wiki/Q140069633',
+      'https://www.instagram.com/zinxsocial',
+      'https://www.facebook.com/zinxofficial',
+    ],
   };
 }
 

@@ -30,14 +30,6 @@ export function buildHomeSchema() {
       description:
         'Zinx Casino – informații oficiale pentru România despre bonusuri, sloturi, cazino live și pariuri sportive.',
       url: absoluteUrl('/'),
-      keywords: [
-        'zinx casino',
-        'zinx casino românia',
-        'bonus zinx casino',
-        'sloturi zinx',
-        'cazino live zinx',
-        'pariuri sportive zinx',
-      ],
     }),
     buildBreadcrumbList([{ name: 'Acasă', path: '/' }]),
     {
