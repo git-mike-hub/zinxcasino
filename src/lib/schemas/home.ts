@@ -2,24 +2,24 @@ import { SITE_URL, absoluteUrl, buildBreadcrumbList, buildSchemaGraph, buildWebP
 
 const homeFaq = [
   {
-    question: 'Este Zinx Casino legal în România?',
+    question: 'Zinx casino este de încredere și sigur pentru jucătorii români?',
     answer:
-      'Da. Zinx Casino este licențiat de ONJN prin Licența Clasa 1 nr. L1254520W001667. Platforma funcționează într-un cadru reglementat, cu conexiuni SSL și jocuri cu RNG certificat.',
+      'Da. Platforma Zinx este licențiată de Oficiul Național pentru Jocuri de Noroc din România sub licența nr. L1254520W001667. Site-ul beneficiază de criptare SSL, iar jocurile sunt certificate de laboratoare specializate în verificarea RNG-ului.',
   },
   {
-    question: 'Ce bonus primesc la înregistrare?',
+    question: 'Cazinoul Zinx este disponibil și pe mobil?',
     answer:
-      'La prima depunere primești 100% bonus până la 5.000 RON + 500 rotiri gratuite pentru cazino, sau 100% până la 200 RON pentru pariuri sportive. Rulajul bonusului de cazino este de 35x (depunere + bonus).',
+      'Da. Zinx casino este optimizat pentru browserele de mobil, dar dispune și de aplicații concepute special pentru iOS și Android. Aplicațiile se descarcă din magazinele oficiale App Store și Google Play.',
   },
   {
-    question: 'Cum retrag banii de la Zinx?',
+    question: 'Verificarea KYC este necesară la Zinx casino?',
     answer:
-      'Din contul tău, accesezi secțiunea de retrageri, alegi metoda preferată și introduci suma. Retragerea minimă este 50 RON. Contul trebuie verificat înainte de prima retragere.',
+      'Da. Cazinoul online Zinx verifică identitatea noilor jucătorilor după crearea contului și înainte de efectuarea primei retrageri. De asemenea, derulează verificări suplimentare de identitate la retragerile ulterioare.',
   },
   {
-    question: 'Zinx funcționează pe mobil?',
+    question: 'Cum devin membru VIP la casino Zinx România?',
     answer:
-      'Da, Zinx funcționează direct din browser pe orice dispozitiv — telefon, tabletă sau PC — fără să fie necesară descărcarea unei aplicații. Există și aplicații native pentru iOS și Android.',
+      'Toți utilizatorii înregistrați pot participa la programul de loialitate. Accesul la beneficiile VIP se acordă în funcție de activitatea și nivelul contului, conform regulilor platformei.',
   },
 ];
 
@@ -28,7 +28,7 @@ export function buildHomeSchema() {
     buildWebPage({
       name: 'Zinx Casino',
       description:
-        'Zinx Casino – informații oficiale pentru România despre bonusuri, sloturi, cazino live și pariuri sportive.',
+        'Cauți sloturi de la furnizori selecți, păcănele populare, live cazino 24/7, bonusuri și promoții speciale? Înregistrează-te și joacă la Zinx casino România.',
       url: absoluteUrl('/'),
     }),
     buildBreadcrumbList([{ name: 'Acasă', path: '/' }]),
