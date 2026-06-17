@@ -11,11 +11,15 @@ function toCanonicalSiteUrl(url) {
   const parsed = new URL(url);
   parsed.protocol = 'https:';
   parsed.hostname = 'www.zinxcasino.ro';
+  if (parsed.pathname !== '/' && parsed.pathname.endsWith('/')) {
+    parsed.pathname = parsed.pathname.slice(0, -1);
+  }
   return parsed.href;
 }
 
 export default defineConfig({
   site: SITE_URL,
+  trailingSlash: 'never',
   vite: {
     plugins: [tailwindcss()],
   },

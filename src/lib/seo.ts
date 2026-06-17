@@ -8,9 +8,9 @@ export const ORGANIZATION_ID = `${ORGANIZATION_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
 export function normalizePath(path: string): string {
-  if (path === '/') return '/';
   if (/\.[a-z0-9]+$/i.test(path)) return path;
-  return path.endsWith('/') ? path : `${path}/`;
+  const trimmed = path.replace(/\/+$/, '');
+  return trimmed || '/';
 }
 
 export function absoluteUrl(path: string): string {
