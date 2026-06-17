@@ -29,6 +29,7 @@ export function buildOrganization() {
       'https://www.wikidata.org/wiki/Q140069633',
       'https://www.instagram.com/zinxsocial',
       'https://www.facebook.com/zinxofficial',
+      'https://www.youtube.com/@ZinxCasino',
     ],
   };
 }
