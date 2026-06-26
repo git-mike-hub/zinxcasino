@@ -52,7 +52,7 @@ const navLinks = [
         href={CTA_URL}
         rel="noopener noreferrer sponsored"
         target="_blank"
-        class="inline-block font-bold text-sm px-4 py-2 rounded-full text-white transition-all duration-200 hover:scale-105 md:px-6 md:py-2.5"
+        class="inline-block font-bold px-4 py-2 rounded-full text-white transition-all duration-200 hover:scale-105 md:px-6 md:py-2.5"
         style="background: linear-gradient(90deg, #00d4ff, #7b2ff7); box-shadow: 0 0 20px rgba(0,212,255,0.3);"
       >
         Înregistrează
@@ -67,7 +67,7 @@ const navLinks = [
     <div class="flex flex-col gap-3">
       {
         navLinks.map((link) => (
-          <a href={link.href} class="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          <a href={link.href} class="font-medium text-gray-300 hover:text-white transition-colors">
             {link.label}
           </a>
         ))
@@ -100,6 +100,7 @@ const navLinks = [
 
 <style>
   .site-header {
+    font-size: 17px;
     background-color: transparent;
     transition:
       background-color 0.25s ease,
