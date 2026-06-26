@@ -1,47 +1,12 @@
 ---
+import Banner from './Banner.astro';
 import Header from './Header.astro';
 import HeroCTA from './HeroCTA.astro';
 ---
 
 <section class="relative w-full">
-  <div class="hidden md:block">
-    <img
-      src="/images/zinx-hero-banner-desktop.webp"
-      alt="Zinx Casino - bonus până la 5.000 RON"
-      class="w-full"
-      loading="eager"
-      fetchpriority="high"
-      width="1920"
-      height="600"
-    />
-  </div>
-
-  <div class="site-hero__mobile-media md:hidden">
-    <img
-      src="/images/zinx-hero-banner-mobile.webp"
-      alt="Zinx Casino - bonus până la 5.000 RON"
-      class="site-hero__mobile-image"
-      loading="eager"
-      fetchpriority="high"
-      width="853"
-      height="1844"
-    />
-  </div>
+  <Banner />
 
   <Header />
   <HeroCTA />
 </section>
-
-<style>
-  .site-hero__mobile-media {
-    width: 100%;
-    line-height: 0;
-  }
-
-  .site-hero__mobile-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }
-</style>
