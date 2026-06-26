@@ -9,7 +9,7 @@ const navLinks = [
 ];
 ---
 
-<header class="absolute inset-x-0 top-0 z-10 px-4 py-3">
+<header id="site-header" class="site-header sticky top-0 z-50 px-4 py-3">
   <div class="max-w-6xl mx-auto grid grid-cols-3 items-center gap-4">
     <div class="justify-self-start">
       <button
@@ -76,8 +76,17 @@ const navLinks = [
   </nav>
 
   <script is:inline>
+    const header = document.getElementById('site-header');
     const toggleButton = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-nav-menu');
+
+    const onScroll = () => {
+      if (!header) return;
+      header.classList.toggle('site-header--scrolled', window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
     if (toggleButton && mobileMenu) {
       toggleButton.addEventListener('click', () => {
@@ -88,3 +97,19 @@ const navLinks = [
     }
   </script>
 </header>
+
+<style>
+  .site-header {
+    background-color: transparent;
+    transition:
+      background-color 0.25s ease,
+      backdrop-filter 0.25s ease,
+      -webkit-backdrop-filter 0.25s ease;
+  }
+
+  .site-header--scrolled {
+    background-color: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+</style>
