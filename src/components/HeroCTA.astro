@@ -3,40 +3,44 @@ const CTA_URL = 'https://zinx.ro/ro?utm_source=zinxcasino&utm_medium=hero&utm_ca
 ---
 
 <div class="hero-cta">
-  <span class="hero-cta__badge">
-    <span class="hero-cta__badge-text">Bonus de bun venit</span>
-  </span>
+  <div class="hero-cta__content">
+    <span class="hero-cta__badge">
+      <span class="hero-cta__badge-text">Bonus de bun venit</span>
+    </span>
 
-  <p class="hero-cta__headline">
-    100% PÂNĂ LA 5,000 RON
-    <br />
-    + 500 ROTIRI GRATUITE
-  </p>
+    <p class="hero-cta__headline">
+      100% PÂNĂ LA 5,000 RON
+      <br />
+      + 500 ROTIRI GRATUITE
+    </p>
 
-  <a
-    href={CTA_URL}
-    rel="noopener noreferrer sponsored"
-    target="_blank"
-    class="hero-cta__button"
-  >
-    ÎNSCRIE-TE ACUM
-  </a>
+    <a
+      href={CTA_URL}
+      rel="noopener noreferrer sponsored"
+      target="_blank"
+      class="hero-cta__button"
+    >
+      ÎNSCRIE-TE ACUM
+    </a>
+  </div>
 </div>
 
 <style>
   .hero-cta {
     position: absolute;
     z-index: 5;
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
     bottom: 1.75rem;
     left: 50%;
     width: min(92%, 22rem);
     transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .hero-cta__content {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    pointer-events: none;
   }
 
   .hero-cta__badge,
@@ -47,8 +51,9 @@ const CTA_URL = 'https://zinx.ro/ro?utm_source=zinxcasino&utm_medium=hero&utm_ca
 
   .hero-cta__badge {
     display: inline-block;
+    margin-bottom: 0.75rem;
     background: linear-gradient(180deg, #ff6b2c 0%, #f04a12 100%);
-    padding: 0.28rem 1.1rem;
+    padding: 0.2rem 0.9rem;
     transform: skewX(-14deg);
     box-shadow: 0 4px 14px rgba(240, 74, 18, 0.45);
   }
@@ -71,7 +76,7 @@ const CTA_URL = 'https://zinx.ro/ro?utm_source=zinxcasino&utm_medium=hero&utm_ca
     font-size: clamp(1.35rem, 5.2vw, 1.85rem);
     font-weight: 900;
     font-style: italic;
-    line-height: 1.05;
+    line-height: 1;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     text-shadow:
@@ -84,6 +89,7 @@ const CTA_URL = 'https://zinx.ro/ro?utm_source=zinxcasino&utm_medium=hero&utm_ca
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-top: 1.375rem;
     min-width: 13.5rem;
     padding: 0.8rem 1.75rem;
     border-radius: 9999px;
@@ -117,14 +123,23 @@ const CTA_URL = 'https://zinx.ro/ro?utm_source=zinxcasino&utm_medium=hero&utm_ca
     .hero-cta {
       bottom: auto;
       left: 0;
+      right: 0;
       top: 54%;
-      width: min(42%, 30rem);
-      max-width: none;
-      padding-left: clamp(1.5rem, 4vw, 4.5rem);
+      width: 100%;
       transform: translateY(-50%);
+    }
+
+    .hero-cta__content {
+      width: 100%;
+      max-width: 72rem;
+      margin: 0 auto;
+      padding-left: 4rem;
       align-items: flex-start;
       text-align: left;
-      gap: 1rem;
+    }
+
+    .hero-cta__badge {
+      margin-bottom: 0.875rem;
     }
 
     .hero-cta__badge-text {
@@ -138,6 +153,7 @@ const CTA_URL = 'https://zinx.ro/ro?utm_source=zinxcasino&utm_medium=hero&utm_ca
     .hero-cta__button {
       font-size: 1.05rem;
       min-width: 15rem;
+      margin-top: 1.5rem;
       padding: 0.9rem 2rem;
     }
   }
