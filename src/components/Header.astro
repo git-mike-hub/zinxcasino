@@ -17,7 +17,7 @@ const navLinks = [
         type="button"
         class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-black/30 text-white backdrop-blur-sm"
         aria-label="Deschide meniul principal"
-        aria-controls="mobile-nav-menu"
+        aria-controls="nav-menu"
         aria-expanded="false"
       >
         <svg
@@ -59,48 +59,99 @@ const navLinks = [
       </a>
     </div>
   </div>
-
-  <nav
-    id="mobile-nav-menu"
-    class="hidden absolute left-4 right-4 top-full mt-2 rounded-xl border border-white/10 bg-[#080810]/95 p-4 backdrop-blur-md"
-  >
-    <div class="flex flex-col gap-3">
-      {
-        navLinks.map((link) => (
-          <a href={link.href} class="font-medium text-gray-300 hover:text-white transition-colors">
-            {link.label}
-          </a>
-        ))
-      }
-    </div>
-  </nav>
-
-  <script is:inline>
-    const header = document.getElementById('site-header');
-    const toggleButton = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-nav-menu');
-
-    const onScroll = () => {
-      if (!header) return;
-      header.classList.toggle('site-header--scrolled', window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    if (toggleButton && mobileMenu) {
-      toggleButton.addEventListener('click', () => {
-        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-        toggleButton.setAttribute('aria-expanded', String(!isExpanded));
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-  </script>
 </header>
+
+<div
+  id="nav-backdrop"
+  class="nav-backdrop"
+  aria-hidden="true"
+  tabindex="-1"
+></div>
+
+<nav id="nav-menu" class="nav-menu" aria-hidden="true">
+  <div class="nav-menu__header">
+    <button
+      id="nav-menu-close"
+      type="button"
+      class="nav-menu__close"
+      aria-label="Închide meniul principal"
+    >
+      <svg
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class="nav-menu__links">
+    {
+      navLinks.map((link) => (
+        <a href={link.href} class="nav-menu__link">
+          {link.label}
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<script is:inline>
+  const header = document.getElementById('site-header');
+  const toggleButton = document.getElementById('mobile-menu-toggle');
+  const closeButton = document.getElementById('nav-menu-close');
+  const navMenu = document.getElementById('nav-menu');
+  const navBackdrop = document.getElementById('nav-backdrop');
+
+  const onScroll = () => {
+    if (!header) return;
+    header.classList.toggle('site-header--scrolled', window.scrollY > 50);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const setMenuOpen = (isOpen) => {
+    if (!toggleButton || !navMenu || !navBackdrop) return;
+
+    toggleButton.setAttribute('aria-expanded', String(isOpen));
+    navMenu.classList.toggle('nav-menu--open', isOpen);
+    navBackdrop.classList.toggle('nav-backdrop--open', isOpen);
+    navMenu.setAttribute('aria-hidden', String(!isOpen));
+    navBackdrop.setAttribute('aria-hidden', String(!isOpen));
+    document.body.classList.toggle('nav-menu-open', isOpen);
+  };
+
+  const openMenu = () => setMenuOpen(true);
+  const closeMenu = () => setMenuOpen(false);
+  const toggleMenu = () => {
+    const isOpen = toggleButton?.getAttribute('aria-expanded') === 'true';
+    setMenuOpen(!isOpen);
+  };
+
+  toggleButton?.addEventListener('click', toggleMenu);
+  closeButton?.addEventListener('click', closeMenu);
+  navBackdrop?.addEventListener('click', closeMenu);
+
+  navMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toggleButton?.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+    }
+  });
+</script>
 
 <style>
   .site-header {
-    font-size: 17px;
+    font-size: 14px;
     background-color: transparent;
     transition:
       background-color 0.25s ease,
@@ -112,5 +163,107 @@ const navLinks = [
     background-color: rgba(10, 10, 15, 0.9);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+  }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-backdrop--open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-menu {
+    position: fixed;
+    z-index: 110;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1a0a3e;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    visibility: hidden;
+  }
+
+  .nav-menu--open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .nav-menu__header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1rem 0.5rem;
+  }
+
+  .nav-menu__close {
+    display: inline-flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .nav-menu__close:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-menu__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem 1.5rem;
+  }
+
+  .nav-menu__link {
+    display: block;
+    padding: 0.75rem 0.5rem;
+    font-weight: 500;
+    color: #d1d5db;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .nav-menu__link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  :global(body.nav-menu-open) {
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .nav-menu {
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .nav-backdrop {
+      display: none;
+    }
+
+    .nav-menu {
+      top: 4rem;
+      height: calc(100vh - 4rem);
+      bottom: auto;
+    }
   }
 </style>
