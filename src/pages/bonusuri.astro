@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHero from '../components/SiteHero.astro';
 import PageTitle from '../components/PageTitle.astro';
 import PromoBanner from '../components/PromoBanner.astro';
+import ResponsiveDataTable from '../components/ResponsiveDataTable.astro';
 import Footer from '../components/Footer.astro';
 import { buildPageSchema } from '../lib/schemas/page';
 import { DEFAULT_OG_IMAGE } from '../lib/seo';
@@ -14,6 +15,85 @@ const schema = buildPageSchema({
   path: '/bonusuri',
   keywords: ['bonusuri zinx casino', 'promoții zinx', 'bonus bun venit zinx', 'bonusuri pariuri sportive zinx'],
 });
+
+const bonusTableColumns = [
+  'Denumire bonus',
+  'Bonus',
+  'Depunere minimă',
+  'Cerințe de rulaj',
+];
+
+const casinoBonusRows = [
+  [
+    'Bonus de bun venit',
+    '100% până la 5000 RON + 500 rotiri gratuite la Sweet Bonanza (250 free spins sunt acordate la verificarea contului)',
+    '25 RON',
+    'Rulaj bani: 35x (bonus + depunere); Rulaj rotiri gratuite: 40x; Miza maximă: 25 RON; Termen de rulaj: 10 zile; Câștiguri maxime rotiri gratuite: 800 RON/ depunere, respectiv 400 RON/ rotiri gratuite la verificarea KY.',
+  ],
+  [
+    'Bonus săptămânal la reîncărcare',
+    '50 rotiri gratuite la un slot popular',
+    '100 RON',
+    'Rulaj: 40x; Termen de rulaj: 10 zile.',
+  ],
+  [
+    'Bonus de weekend la reîncărcare',
+    '30% până la 600 RON + 60 rotiri gratuite la un slot popular',
+    '100 Ron/ 200 RON',
+    'Rulaj bani: 35x (bonus + depunere); Rulaj rotiri gratuite: 40x; Miza maximă: 25 RON; Termen de rulaj: 10 zile.',
+  ],
+  [
+    'Bonus cashback live casino',
+    '10% până la 1000 RON',
+    '25 RON',
+    'Rulaj: 1x. Bonusul se solicită de către jucător, în ziua de luni, în intervalul orar 06:00-23:59',
+  ],
+];
+
+const sportBonusRows = [
+  [
+    'Bonus de bun venit',
+    '100% până la 200 RON',
+    '25 RON',
+    'Rulaj: 6x; Cote minime: 1.50; Termen de rulaj: 10 zile; Câștiguri maxime: 250 Ron',
+  ],
+  [
+    'Bonus săptămânal la reîncărcare',
+    '50% până la 2500 RON',
+    '100 RON',
+    'Rulaj: 6x; Cote minime: 1.50/ pariuri multiple și 2.0/ pariuri simple; Termen de rulaj: 30 zile; Câștiguri maxime: 250 Ron',
+  ],
+  [
+    'Bonus cashback',
+    '10% până la 2500 RON',
+    '100 RON',
+    'Rulaj: 3x. Bonusul se solicită de către jucător, în ziua de luni, în intervalul orar 06:00-23:59',
+  ],
+  [
+    'Amplificator de acumulare',
+    'Între 3% și 100%',
+    '1 RON',
+    'Cotă minimă de 1.40/ selecție; Între 3 și 21+ selecții.',
+  ],
+  [
+    'Plată Anticipată',
+    'Avans de 2 goluri',
+    'x',
+    'Meciuri de fotbal din Liga 1, Premier League, La Liga, Serie A, Bundesliga și Ligue 1',
+  ],
+  [
+    'Rambursare 100%',
+    'Pariu returnat la scor alb',
+    'x',
+    'Meciuri de fotbal din Premier League, La Liga, Serie A, Bundesliga și Ligue 1',
+  ],
+  [
+    'Câștiguri crescute',
+    'Cote mărite',
+    'x',
+    'Pariuri pre-meci',
+  ],
+];
 ---
 
 <BaseLayout
@@ -48,56 +128,7 @@ const schema = buildPageSchema({
         <p>Lista de bonusuri Zinx casino România include următoarele categorii de oferte:</p>
       </div>
 
-      <div class="overflow-x-auto mt-6">
-        <table class="w-full text-sm text-left border-collapse">
-          <thead>
-            <tr style="background: #111118; border-bottom: 1px solid #1a1a3e;">
-              <th class="py-3 px-4 text-white font-semibold">Denumire bonus</th>
-              <th class="py-3 px-4 text-white font-semibold">Bonus</th>
-              <th class="py-3 px-4 text-white font-semibold">Depunere minimă</th>
-              <th class="py-3 px-4 text-white font-semibold">Cerințe de rulaj</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #1a1a3e;">
-              <td class="py-3 px-4 text-gray-400">Bonus de bun venit</td>
-              <td class="py-3 px-4 text-white">
-                100% până la 5000 RON + 500 rotiri gratuite la Sweet Bonanza (250 free spins sunt acordate la verificarea
-                contului)
-              </td>
-              <td class="py-3 px-4 text-white">25 RON</td>
-              <td class="py-3 px-4 text-white">
-                Rulaj bani: 35x (bonus + depunere); Rulaj rotiri gratuite: 40x; Miza maximă: 25 RON; Termen de rulaj: 10
-                zile; Câștiguri maxime rotiri gratuite: 800 RON/ depunere, respectiv 400 RON/ rotiri gratuite la
-                verificarea KY.
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #1a1a3e;">
-              <td class="py-3 px-4 text-gray-400">Bonus săptămânal la reîncărcare</td>
-              <td class="py-3 px-4 text-white">50 rotiri gratuite la un slot popular</td>
-              <td class="py-3 px-4 text-white">100 RON</td>
-              <td class="py-3 px-4 text-white">Rulaj: 40x; Termen de rulaj: 10 zile.</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #1a1a3e;">
-              <td class="py-3 px-4 text-gray-400">Bonus de weekend la reîncărcare</td>
-              <td class="py-3 px-4 text-white">30% până la 600 RON + 60 rotiri gratuite la un slot popular</td>
-              <td class="py-3 px-4 text-white">100 Ron/ 200 RON</td>
-              <td class="py-3 px-4 text-white">
-                Rulaj bani: 35x (bonus + depunere); Rulaj rotiri gratuite: 40x; Miza maximă: 25 RON; Termen de rulaj: 10
-                zile.
-              </td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 text-gray-400">Bonus cashback live casino</td>
-              <td class="py-3 px-4 text-white">10% până la 1000 RON</td>
-              <td class="py-3 px-4 text-white">25 RON</td>
-              <td class="py-3 px-4 text-white">
-                Rulaj: 1x. Bonusul se solicită de către jucător, în ziua de luni, în intervalul orar 06:00-23:59
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <ResponsiveDataTable columns={bonusTableColumns} rows={casinoBonusRows} />
 
       <div class="space-y-5 text-gray-300 leading-relaxed mt-8">
         <p>Lista bonusurilor de cazino Zinx este completată de următoarele promoții:</p>
@@ -136,73 +167,7 @@ const schema = buildPageSchema({
         </p>
       </div>
 
-      <div class="overflow-x-auto mt-6">
-        <table class="w-full text-sm text-left border-collapse">
-          <thead>
-            <tr style="background: #111118; border-bottom: 1px solid #1a1a3e;">
-              <th class="py-3 px-4 text-white font-semibold">Denumire bonus</th>
-              <th class="py-3 px-4 text-white font-semibold">Bonus</th>
-              <th class="py-3 px-4 text-white font-semibold">Depunere minimă</th>
-              <th class="py-3 px-4 text-white font-semibold">Cerințe de rulaj</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #1a1a3e;">
-              <td class="py-3 px-4 text-gray-400">Bonus de bun venit</td>
-              <td class="py-3 px-4 text-white">100% până la 200 RON</td>
-              <td class="py-3 px-4 text-white">25 RON</td>
-              <td class="py-3 px-4 text-white">
-                Rulaj: 6x; Cote minime: 1.50; Termen de rulaj: 10 zile; Câștiguri maxime: 250 Ron
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #1a1a3e;">
-              <td class="py-3 px-4 text-gray-400">Bonus săptămânal la reîncărcare</td>
-              <td class="py-3 px-4 text-white">50% până la 2500 RON</td>
-              <td class="py-3 px-4 text-white">100 RON</td>
-              <td class="py-3 px-4 text-white">
-                Rulaj: 6x; Cote minime: 1.50/ pariuri multiple și 2.0/ pariuri simple; Termen de rulaj: 30 zile; Câștiguri
-                maxime: 250 Ron
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #1a1a3e;">
-              <td class="py-3 px-4 text-gray-400">Bonus cashback</td>
-              <td class="py-3 px-4 text-white">10% până la 2500 RON</td>
-              <td class="py-3 px-4 text-white">100 RON</td>
-              <td class="py-3 px-4 text-white">
-                Rulaj: 3x. Bonusul se solicită de către jucător, în ziua de luni, în intervalul orar 06:00-23:59
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #1a1a3e;">
-              <td class="py-3 px-4 text-gray-400">Amplificator de acumulare</td>
-              <td class="py-3 px-4 text-white">Între 3% și 100%</td>
-              <td class="py-3 px-4 text-white">1 RON</td>
-              <td class="py-3 px-4 text-white">Cotă minimă de 1.40/ selecție; Între 3 și 21+ selecții.</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #1a1a3e;">
-              <td class="py-3 px-4 text-gray-400">Plată Anticipată</td>
-              <td class="py-3 px-4 text-white">Avans de 2 goluri</td>
-              <td class="py-3 px-4 text-white">x</td>
-              <td class="py-3 px-4 text-white">
-                Meciuri de fotbal din Liga 1, Premier League, La Liga, Serie A, Bundesliga și Ligue 1
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #1a1a3e;">
-              <td class="py-3 px-4 text-gray-400">Rambursare 100%</td>
-              <td class="py-3 px-4 text-white">Pariu returnat la scor alb</td>
-              <td class="py-3 px-4 text-white">x</td>
-              <td class="py-3 px-4 text-white">
-                Meciuri de fotbal din Premier League, La Liga, Serie A, Bundesliga și Ligue 1
-              </td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 text-gray-400">Câștiguri crescute</td>
-              <td class="py-3 px-4 text-white">Cote mărite</td>
-              <td class="py-3 px-4 text-white">x</td>
-              <td class="py-3 px-4 text-white">Pariuri pre-meci</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <ResponsiveDataTable columns={bonusTableColumns} rows={sportBonusRows} />
 
       <p class="text-gray-300 leading-relaxed mt-8">
         Asemenea jucătorilor de cazino Zinx le oferă pariorilor turnee de pariuri (Cupa Ligilor de Top, cu premii de până

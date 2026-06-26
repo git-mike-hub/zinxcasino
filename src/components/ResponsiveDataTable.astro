@@ -1,0 +1,66 @@
+---
+interface Props {
+  columns: string[];
+  rows: string[][];
+}
+
+const { columns, rows } = Astro.props;
+---
+
+<div class="mt-6">
+  <div class="md:hidden flex flex-col gap-5">
+    {
+      rows.map((row) => (
+        <div
+          class="rounded-lg border p-4"
+          style="background: #111118; border-color: #3d2a7a;"
+        >
+          {
+            columns.map((column, index) => (
+              <div class:list={[index > 0 && 'mt-3']}>
+                <div class="text-xs text-gray-400 font-medium">{column}</div>
+                <div class="text-white mt-1 leading-relaxed">{row[index]}</div>
+              </div>
+            ))
+          }
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="hidden md:table w-full text-sm text-left border-collapse">
+    <thead>
+      <tr style="background: #111118; border-bottom: 1px solid #1a1a3e;">
+        {
+          columns.map((column) => (
+            <th class="py-3 px-4 text-white font-semibold">{column}</th>
+          ))
+        }
+      </tr>
+    </thead>
+    <tbody>
+      {
+        rows.map((row, rowIndex) => (
+          <tr
+            style={rowIndex < rows.length - 1 ? 'border-bottom: 1px solid #1a1a3e;' : undefined}
+          >
+            {
+              row.map((cell, cellIndex) => (
+                <td
+                  class:list={[
+                    'py-3 px-4',
+                    cellIndex === 0 ? 'text-gray-400' : 'text-white',
+                  ]}
+                >
+                  {cell}
+                </td>
+              ))
+            }
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+  </div>
+</div>
