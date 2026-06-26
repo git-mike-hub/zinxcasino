@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import StickyBanner from '../components/StickyBanner.astro';
 import { DEFAULT_OG_IMAGE, SITE_NAME, absoluteUrl } from '../lib/seo';
 
 const {
@@ -63,8 +62,6 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : absoluteUrl(ogImage);
   <link rel="sitemap" href="/sitemap-index.xml" />
 </head>
 <body class="text-white font-sans" style="background: #0a0a0f;">
-  <slot name="header" />
   <slot />
-  <StickyBanner />
 </body>
 </html>

@@ -1,9 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Banner from '../components/Banner.astro';
-import HeroCTA from '../components/HeroCTA.astro';
+import SiteHero from '../components/SiteHero.astro';
 import GameCategories from '../components/GameCategories.astro';
+import PromoBanner from '../components/PromoBanner.astro';
 import Footer from '../components/Footer.astro';
 import { buildHomeSchema } from '../lib/schemas/home';
 import { DEFAULT_OG_IMAGE } from '../lib/seo';
@@ -18,11 +17,7 @@ const schema = buildHomeSchema();
   ogImage={DEFAULT_OG_IMAGE}
   ogImageAlt="Zinx Casino – bonusuri și jocuri online în România"
 >
-<Header slot="header" />
-  <HeroCTA title="Zinx Casino" />
-  <Banner />
-  
-
+<SiteHero />
 
   <GameCategories />
 
@@ -274,6 +269,7 @@ const schema = buildHomeSchema();
 
   </main>
 
+  <PromoBanner />
   <Footer />
 
   <script is:inline>

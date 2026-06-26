@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Banner from '../components/Banner.astro';
-import HeroCTA from '../components/HeroCTA.astro';
+import SiteHero from '../components/SiteHero.astro';
+import PageTitle from '../components/PageTitle.astro';
+import PromoBanner from '../components/PromoBanner.astro';
 import Footer from '../components/Footer.astro';
 import { buildPageSchema } from '../lib/schemas/page';
 import { DEFAULT_OG_IMAGE } from '../lib/seo';
@@ -23,11 +23,10 @@ const schema = buildPageSchema({
   ogImage={DEFAULT_OG_IMAGE}
   ogImageAlt="Cazino Live Zinx Casino"
 >
-  <Header slot="header" />
-  <HeroCTA title="Zinx casino live: blackjack, zaruri, ruletă și baccarat cu dealeri reali" />
-  <Banner />
+  <SiteHero />
 
   <main id="continut-principal" class="max-w-4xl mx-auto px-4 py-12 space-y-16">
+    <PageTitle title="Zinx casino live: blackjack, zaruri, ruletă și baccarat cu dealeri reali" />
     <section aria-labelledby="intro-cazino-live">
       <div class="space-y-5 text-gray-300 leading-relaxed">
         <p>
@@ -140,5 +139,6 @@ const schema = buildPageSchema({
     </section>
   </main>
 
+  <PromoBanner />
   <Footer />
 </BaseLayout>
