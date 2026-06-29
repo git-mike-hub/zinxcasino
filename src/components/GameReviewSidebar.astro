@@ -1,0 +1,83 @@
+---
+import { popularGameLinks } from '../data/popular-games';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<aside class="game-review-sidebar" aria-label="Jocuri populare">
+  <h2 class="game-review-sidebar__title">Jocuri populare</h2>
+  <nav aria-label="Jocuri populare">
+    <ul class="game-review-sidebar__list">
+      {
+        popularGameLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                'game-review-sidebar__link',
+                currentPath === link.href && 'game-review-sidebar__link--active',
+              ]}
+              aria-current={currentPath === link.href ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</aside>
+
+<style>
+  .game-review-sidebar {
+    border: 1px solid #1a1a3e;
+    border-radius: 0.75rem;
+    background: #111118;
+    padding: 1.25rem;
+  }
+
+  .game-review-sidebar__title {
+    margin: 0 0 1rem;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  .game-review-sidebar__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .game-review-sidebar__link {
+    display: block;
+    padding: 0.75rem 0.875rem;
+    border-radius: 0.5rem;
+    color: #d1d5db;
+    text-decoration: none;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+    border: 1px solid transparent;
+  }
+
+  .game-review-sidebar__link:hover {
+    color: #fff;
+    background: rgba(123, 47, 247, 0.12);
+    border-color: #3d2a7a;
+  }
+
+  .game-review-sidebar__link--active {
+    color: #fff;
+    background: rgba(0, 212, 255, 0.08);
+    border-color: #3d2a7a;
+  }
+</style>

@@ -1,0 +1,220 @@
+---
+import type { Author } from '../lib/authors';
+
+interface Props {
+  author: Author;
+  lastUpdated: string;
+  lastUpdatedLabel: string;
+}
+
+const { author, lastUpdated, lastUpdatedLabel } = Astro.props;
+const popupId = `author-popup-${author.name.replace(/\s+/g, '-').toLowerCase()}`;
+---
+
+<div class="article-byline flex flex-wrap items-center gap-x-4 gap-y-3 text-sm text-gray-400">
+  <div class="relative flex items-center gap-3">
+    <img
+      src={author.image}
+      alt={`Fotografie ${author.name}`}
+      width="40"
+      height="40"
+      class="h-10 w-10 rounded-full object-cover border border-[#3d2a7a]"
+      loading="eager"
+    />
+
+    <p class="m-0">
+      Article by
+      <button
+        type="button"
+        class="author-byline__name"
+        aria-expanded="false"
+        aria-controls={popupId}
+        data-author-popup-trigger={popupId}
+      >
+        {author.name}
+      </button>
+    </p>
+
+    <div
+      id={popupId}
+      class="author-popup"
+      role="dialog"
+      aria-label={`Informații despre ${author.name}`}
+      aria-hidden="true"
+      hidden
+    >
+      <div class="author-popup__header">
+        <img
+          src={author.image}
+          alt={`Fotografie ${author.name}`}
+          width="72"
+          height="72"
+          class="h-[4.5rem] w-[4.5rem] rounded-full object-cover border-2 border-[#3d2a7a]"
+          loading="lazy"
+        />
+        <div>
+          <p class="author-popup__name">{author.name}</p>
+          <a
+            href={author.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="author-popup__linkedin"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="author-popup__section">
+        <h3 class="author-popup__heading">Expertise</h3>
+        <p class="author-popup__text">{author.expertise}</p>
+      </div>
+    </div>
+  </div>
+
+  <time datetime={lastUpdated} class="text-gray-500">
+    Actualizat la {lastUpdatedLabel}
+  </time>
+</div>
+
+<script is:inline>
+  const initAuthorPopups = () => {
+    document.querySelectorAll('[data-author-popup-trigger]').forEach((trigger) => {
+      if (trigger.dataset.authorPopupBound === 'true') return;
+      trigger.dataset.authorPopupBound = 'true';
+
+      const popupId = trigger.getAttribute('data-author-popup-trigger');
+      const popup = popupId ? document.getElementById(popupId) : null;
+      if (!popup) return;
+
+      const closePopup = () => {
+        popup.hidden = true;
+        popup.setAttribute('aria-hidden', 'true');
+        trigger.setAttribute('aria-expanded', 'false');
+      };
+
+      const openPopup = () => {
+        document.querySelectorAll('.author-popup:not([hidden])').forEach((openPopupEl) => {
+          if (openPopupEl !== popup) {
+            openPopupEl.hidden = true;
+            openPopupEl.setAttribute('aria-hidden', 'true');
+          }
+        });
+
+        document.querySelectorAll('[data-author-popup-trigger][aria-expanded="true"]').forEach((openTrigger) => {
+          if (openTrigger !== trigger) {
+            openTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        popup.hidden = false;
+        popup.setAttribute('aria-hidden', 'false');
+        trigger.setAttribute('aria-expanded', 'true');
+      };
+
+      trigger.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          closePopup();
+        } else {
+          openPopup();
+        }
+      });
+
+      document.addEventListener('click', (event) => {
+        if (
+          trigger.getAttribute('aria-expanded') === 'true' &&
+          !popup.contains(event.target) &&
+          event.target !== trigger
+        ) {
+          closePopup();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+          closePopup();
+        }
+      });
+    });
+  };
+
+  initAuthorPopups();
+  document.addEventListener('astro:page-load', initAuthorPopups);
+</script>
+
+<style>
+  .author-byline__name {
+    margin-left: 0.25rem;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: #a78bfa;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .author-byline__name:hover {
+    color: #c4b5fd;
+  }
+
+  .author-popup {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 0;
+    z-index: 120;
+    width: min(22rem, calc(100vw - 2rem));
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #3d2a7a;
+    background: #111118;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .author-popup__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #1a1a3e;
+  }
+
+  .author-popup__name {
+    margin: 0;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .author-popup__linkedin {
+    display: inline-block;
+    margin-top: 0.25rem;
+    color: #00d4ff;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .author-popup__linkedin:hover {
+    text-decoration: underline;
+  }
+
+  .author-popup__heading {
+    margin: 0 0 0.5rem;
+    color: #00d4ff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .author-popup__text {
+    margin: 0;
+    color: #d1d5db;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+</style>

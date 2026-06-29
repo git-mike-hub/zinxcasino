@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GameReviewLayout from '../layouts/GameReviewLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import PromoBanner from '../components/PromoBanner.astro';
+import Footer from '../components/Footer.astro';
+import { CONSTANTIN_HOMEGHI } from '../lib/authors';
+import { buildArticleSchema } from '../lib/schemas/article';
+import { absoluteUrl } from '../lib/seo';
+
+const pagePath = '/mega-shoot-recenzie';
+const lastUpdated = '2026-06-29';
+const lastUpdatedLabel = '29 iunie 2026';
+const heroImage = '/images/mega-shoot-zinx.png';
+
+const title = 'Mega Shoot la Zinx Casino – Câștigă premii zilnice în turneu';
+const description =
+  'Înscrie-te la Mega Shoot, turneul Zinx Casino cu premii zilnice și un mare premiu de 100.000 RON. Participă acum!';
+const headline = 'Mega Shoot Zinx Casino: turneu cu premii zilnice și un mare premiu de 100.000 RON';
+
+const schema = buildArticleSchema({
+  headline,
+  description,
+  path: pagePath,
+  datePublished: lastUpdated,
+  dateModified: lastUpdated,
+  author: {
+    name: CONSTANTIN_HOMEGHI.name,
+    url: CONSTANTIN_HOMEGHI.linkedin,
+    image: CONSTANTIN_HOMEGHI.image,
+  },
+  image: heroImage,
+  keywords: [
+    'mega shoot zinx',
+    'turneu zinx casino',
+    'marele turneu 2026',
+    'premii zinx casino',
+    'recenzie mega shoot',
+  ],
+  breadcrumbItems: [
+    { name: 'Acasă', path: '/' },
+    { name: 'Mega Shoot', path: pagePath },
+  ],
+});
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  schema={schema}
+  ogImage={absoluteUrl(heroImage)}
+  ogImageAlt="Mega Shoot la Zinx Casino"
+>
+  <GameReviewLayout currentPath={pagePath}>
+    <article class="game-review-article">
+      <nav aria-label="Breadcrumb" class="mb-4 text-sm text-gray-500">
+        <a href="/" class="hover:text-white transition-colors">Acasă</a>
+        <span aria-hidden="true" class="mx-2">›</span>
+        <span class="text-gray-400">Mega Shoot</span>
+      </nav>
+
+      <h1 class="game-review-article__title">{headline}</h1>
+
+      <AuthorByline
+        author={CONSTANTIN_HOMEGHI}
+        lastUpdated={lastUpdated}
+        lastUpdatedLabel={lastUpdatedLabel}
+      />
+
+      <figure class="game-review-article__hero mt-8 mb-10">
+        <img
+          src={heroImage}
+          alt="Mega Shoot la Zinx Casino – interfața jocului de turneu"
+          class="w-full h-auto rounded-xl border border-[#1a1a3e]"
+          width="1200"
+          height="675"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </figure>
+
+      <div class="game-review-article__body space-y-10 text-gray-300 leading-relaxed">
+        <section aria-labelledby="intro-mega-shoot">
+          <p id="intro-mega-shoot">
+            <a href="https://zinx.ro/ro/games" class="article-link" rel="noopener noreferrer sponsored" target="_blank">Cazinoul Zinx</a> a lansat Marele Turneu 2026: Mega Shoot. Pe pagina noastră <a href="/" class="article-link">Zinx Casino</a>, găsești toate detaliile despre Mega Shoot. Află cum participi, cum se desfășoară turneul și ce premii pot fi câștigate.
+          </p>
+        </section>
+
+        <section aria-labelledby="ce-este-mega-shoot">
+          <h2 id="ce-este-mega-shoot" class="article-heading">Ce este Mega Shoot?</h2>
+          <p>
+            Mega Shoot este un turneu dedicat jucătorilor înregistrați pe platforma Zinx Casino. Competiția reprezintă o alternativă interactivă la Campionatul Mondial de Fotbal din 2026. Participanții joacă meciuri de penalty-uri unul contra altuia și câștigă recompense. Numărul de puncte acumulate contribuie la o clasare mai bună în clasamentul final. Fondul de premii ajunge la 165.000 RON, dintre care 100.000 RON reprezintă marele premiu.
+          </p>
+        </section>
+
+        <section aria-labelledby="perioada-mega-shoot">
+          <h2 id="perioada-mega-shoot" class="article-heading">Care este perioada de desfășurare a turneului Mega Shoot?</h2>
+          <p>
+            Mega Shoot are loc în perioada 8 iunie - 19 iulie 2026. La finalul competiției sunt premiați primii 15 clasați. Valoarea premiilor este de 500 RON (locul 15) și ajunge la 100.000 RON (locul 1).
+          </p>
+        </section>
+
+        <section aria-labelledby="desfasurare-mega-shoot">
+          <h2 id="desfasurare-mega-shoot" class="article-heading">Cum se desfășoară turneul Mega Shoot?</h2>
+          <p>
+            În fiecare zi, pe durata turneului, se desfășoară meciuri de fotbal. Pentru a participa la aceste meciuri, jucătorii au nevoie de monede. Zilnic, primești gratuit 20 de monede când te autentifici în cont. Poți obține monede suplimentare prin depuneri și pariuri efectuate pe site.
+          </p>
+        </section>
+
+        <section aria-labelledby="meci-mega-shoot">
+          <h2 id="meci-mega-shoot" class="article-heading">Ce faci mai exact într-un meci din turneul Mega Shoot?</h2>
+          <p>
+            Jucătorul mizează monede la începutul meciului. După ce a plasat miza, tragi la poartă și aperi. În cazul în care nu faci o alegere înainte de expirarea timpului, se efectuează automat și aleatoriu un colț al porții. Dacă câștigi meciul, primești punctele aferente mizei. Atât timp cât joci, acumulezi puncte care te ajută să urci în clasamentul Marelui Turneu Zinx Casino.
+          </p>
+        </section>
+
+        <section aria-labelledby="recompense-zilnice-mega-shoot">
+          <h2 id="recompense-zilnice-mega-shoot" class="article-heading">Cum se câștigă recompensele zilnice?</h2>
+          <p>
+            Câștigi recompense dacă joci meciuri și le câștigi. Victoriile îți aduc mai multe puncte în clasament și premii.
+          </p>
+        </section>
+
+        <section aria-labelledby="premii-zilnice-mega-shoot">
+          <h2 id="premii-zilnice-mega-shoot" class="article-heading">Ce recompense zilnice se pot câștiga la Mega Shoot?</h2>
+          <p>Participanții la meciurile zilnice primesc următoarele recompense, care se calculează în funcție de miza plasată:</p>
+          <ul class="article-list">
+            <li>20 de monede = recompensă de 5 rotiri gratuite</li>
+            <li>50 de monede = recompensă de 10 rotiri gratuite</li>
+            <li>100 de monede = 1 free bet în valoare de 25 RON</li>
+          </ul>
+          <p>
+            Dacă te clasezi în top 10 zilnic, primești un premiu suplimentar. Poți câștiga 20 de rotiri gratuite sau freebet-uri de 500 RON.
+          </p>
+        </section>
+
+        <section aria-labelledby="recompensa-speciala-mega-shoot">
+          <h2 id="recompensa-speciala-mega-shoot" class="article-heading">Recompensă specială la Mega Shoot</h2>
+          <p>
+            Se acordă și o recompensă specială jucătorului care prezice viitoarea campioană mondială la fotbal. Câștigătorul primește automat 50 de rotiri gratuite pentru predicția corectă. Pentru a putea obține recompensa este necesară selectarea viitoarei campioane până pe data de 27 iunie.
+          </p>
+        </section>
+
+        <section aria-labelledby="participare-mega-shoot">
+          <h2 id="participare-mega-shoot" class="article-heading">Cum participi la Mega Shoot de la Zinx Casino?</h2>
+          <p>Pentru a participa la Mega Shoot ai de parcurs următorii pași:</p>
+          <ol class="article-list article-list--ordered">
+            <li>Deschide-ți un cont.</li>
+            <li>Accesează secțiunea &quot;Marele Turneu 2026&quot;.</li>
+            <li>Apasă butonul &quot;Colectați și Jucați&quot; (primești 20 de monede gratuite).</li>
+            <li>Plasează miza (20, 50 sau 100 de monede).</li>
+            <li>Apasă butonul &quot;Joacă&quot;.</li>
+            <li>Când ești portar, selectează un colț; când ești executant, alege punctul în care vei șuta.</li>
+            <li>Fiecare jucător execută 3 lovituri. Dacă scorul este egal, se execută lovituri suplimentare de departajare.</li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="merita-mega-shoot">
+          <h2 id="merita-mega-shoot" class="article-heading">Merită să joci la Mega Shoot de la Zinx Casino?</h2>
+          <p>
+            Competiția este interactivă și se desfășoară între membrii platformei. Joci pe rând rolul goalkeeperului și pe cel al executantului. Aperi și șutezi, având șansa de a obține la final monedele puse în joc. Primești gratis 20 de monede în fiecare zi. Nu ai limită de meciuri pe zi, așa că tu decizi cât joci. Iar la finalul turneului poți câștiga marele premiu de 100.000 RON. Mega Shoot este distractiv, antrenant și oferă recompense zilnice tuturor participanților activi. Intră acum în <a href="https://zinx.ro/ro/special/mega-shoot-v1" class="article-link" rel="noopener noreferrer sponsored" target="_blank">Mega Shoot</a> și începe să acumulezi puncte pentru marele premiu de 100.000 RON!
+          </p>
+        </section>
+      </div>
+    </article>
+  </GameReviewLayout>
+
+  <PromoBanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .game-review-article__title {
+    margin: 0 0 1.25rem;
+    color: #fff;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  .article-heading {
+    margin: 0 0 1rem;
+    color: #00d4ff;
+    font-weight: 700;
+  }
+
+  .article-link {
+    color: #a78bfa;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .article-link:hover {
+    color: #c4b5fd;
+  }
+
+  .article-list {
+    margin: 1rem 0 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .article-list--ordered {
+    list-style: decimal;
+  }
+</style>

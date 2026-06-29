@@ -1,0 +1,38 @@
+---
+import Header from '../components/Header.astro';
+import GameReviewSidebar from '../components/GameReviewSidebar.astro';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<Header />
+
+<div class="game-review-page">
+  <div class="max-w-6xl mx-auto px-4 py-8 md:py-10">
+    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_17.5rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_18.75rem] xl:gap-12">
+      <div class="min-w-0">
+        <slot />
+      </div>
+
+      <div class="hidden lg:block">
+        <div class="sticky top-24">
+          <GameReviewSidebar currentPath={currentPath} />
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:hidden mt-12">
+      <GameReviewSidebar currentPath={currentPath} />
+    </div>
+  </div>
+</div>
+
+<style>
+  .game-review-page {
+    background: #0a0a0f;
+  }
+</style>
