@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # local tooling
 .tmp_py/
+.vercel
