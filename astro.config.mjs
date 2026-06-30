@@ -25,6 +25,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      filter: (page) => !page.includes('/404'),
       serialize(item) {
         return { ...item, url: toCanonicalSiteUrl(item.url) };
       },

@@ -1,0 +1,114 @@
+---
+export const prerender = true;
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { buildSchemaGraph, buildWebPage } from '../lib/seo';
+
+const title = 'Pagina nu a fost găsită | Zinx Casino';
+const description =
+  'Ne pare rău, această pagină nu a fost găsită. Verificați adresa URL sau întoarceți-vă la pagina principală Zinx Casino.';
+
+const schema = buildSchemaGraph(
+  buildWebPage({
+    name: 'Pagina negăsită – 404',
+    description,
+    url: 'https://www.zinxcasino.ro/404',
+  }),
+);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalURL="/404"
+  robots="noindex, follow"
+  schema={schema}
+  ogImage="/images/zinxcasino-404.png"
+  ogImageAlt="Pagina negăsită – Zinx Casino"
+>
+  <Header />
+
+  <main
+    id="continut-principal"
+    class="not-found-page flex min-h-[calc(100vh-12rem)] flex-col items-center justify-center px-4 py-12 text-center"
+  >
+    <p class="not-found-page__code" aria-hidden="true">404</p>
+
+    <img
+      src="/images/zinxcasino-404.png"
+      alt="Dragon Zinx Casino prezintă pagina 404"
+      class="not-found-page__image"
+      width="960"
+      height="540"
+      loading="eager"
+    />
+
+    <h1 class="not-found-page__title">Ne pare rău, această pagină nu a fost găsită.</h1>
+
+    <p class="not-found-page__subtext">
+      Verificați adresa URL sau întoarceți-vă la pagina principală Zinx Casino.
+    </p>
+
+    <a href="/" class="not-found-page__cta">Înapoi la Pagina Principală</a>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .not-found-page__code {
+    margin: 0 0 1rem;
+    font-size: clamp(4rem, 14vw, 6.5rem);
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .not-found-page__image {
+    width: min(100%, 42rem);
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .not-found-page__title {
+    margin: 0 0 1rem;
+    max-width: 36rem;
+    color: #fff;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .not-found-page__subtext {
+    margin: 0 0 2rem;
+    max-width: 32rem;
+    color: #9ca3af;
+    line-height: 1.6;
+  }
+
+  .not-found-page__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 15rem;
+    padding: 0.9rem 2rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+
+  .not-found-page__cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 28px rgba(123, 47, 247, 0.45);
+  }
+</style>
